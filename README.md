@@ -1,4 +1,4 @@
-The personal website of Daniel Heiniger.  It's a simple static site built with Clojure using hiccup and compojure.
+The personal website of Daniel Heiniger.  It's a simple static site built with Clojure using [HTTPkit](https://github.com/http-kit/http-kit), [Hiccup](https://github.com/weavejester/hiccup), and [Compojure](https://github.com/weavejester/compojure).
 
 ## License
 
