@@ -1,0 +1,55 @@
+body {
+    background-color:#333;
+    font-family:Andale Mono, monospace;
+    color:#fff;
+}
+
+header{
+    height:20vh;
+}
+	
+nav a{
+    text-decoration:none;
+    color:#fff;
+    margin-right:10px;
+}
+
+nav a#active{
+    text-decoration: underline;
+}
+
+.bottom-nav{
+    height:30px;
+}
+
+.bottom-disclaimer{
+    width:250px;
+    margin:auto;
+    color: #717171;
+    text-align:center;
+}
+
+.bottom-disclaimer a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.subheading{
+    color:#717171;
+    margin-top:-20px;
+}
+
+.content{
+    width:50%;
+    margin:auto;
+    font-size:x-large;
+    min-height:65vh;
+}
+	 
+.right {
+    float:right;
+}
+
+.left{
+    float:left;
+}      
