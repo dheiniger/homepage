@@ -14,7 +14,7 @@ nav a{
     margin-right:10px;
 }
 
-nav a#active{
+nav a.active{
     text-decoration: underline;
 }
 
@@ -33,6 +33,28 @@ nav a#active{
     text-decoration:none;
     color:inherit;
 }
+
+.button{
+    border: solid 2px;
+    padding:5px;
+    border-radius:5px;
+}
+
+.button:hover{
+    color:green;
+}
+
+.description{
+    font-size:medium;
+}
+
+.preview{
+    border:solid 5px;
+    border-radius: 5px;
+    padding:5px;
+    margin:auto;
+}
+	 
 
 .subheading{
     color:#717171;
