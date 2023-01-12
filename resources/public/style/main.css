@@ -47,6 +47,9 @@ nav a.active{
     border-radius:5px;
 }
 
+.centered{
+    text-align:center;
+}
 
 .description{
     font-size:medium;
