@@ -7,4 +7,5 @@
                  [http-kit "2.7.0-alpha1"]
                  [compojure "1.7.0"]
                  [hiccup "1.0.5"]]
+  :main homepage.core
   :repl-options {:init-ns homepage.core})

@@ -46,14 +46,21 @@
 
 (defn projects-page []
   (page "Projects"
-        [:p "Here are some of my recent side projects.  They are not polished feature-rich projects, in fact, most of them are not even finished.  I tend to start small projects as a way to get familiar with a tool or language."]
+        [:p.description  "Here are some of my recent side projects.  They are not polished feature-rich projects, in fact, most of them are not even finished.  I tend to start small projects as a way to get familiar with a tool or language."]
         [:ol
          [:li
-          [:img.preview {:src "/images/website.png" :height "200"}]
+;          [:img.preview {:src "/images/website.png" :height "200"}]
           [:p.description
-           "This Website.  The website you're viewing is a very basic, static site that was built using Clojure with very few dependencies.  For informational sites, I prefer not rely on javascript, so I decided to use plain Clojure and Hiccup."]]]
-        )
-  )
+           "This " [:a {:href "https://github.com/dheiniger/homepage"} "Website"] ".  The website you're viewing is a very basic, static site that was built using Clojure with very few dependencies.  For informational sites, I prefer to not rely on javascript, so I decided to use plain Clojure and Hiccup."]]
+         [:li
+          [:p.description
+           [:a {:href "https://github.com/dheiniger/movie-night"} "Movie Night"] "Is a proof of concept built with Clojurescript, Reagent, and Re-frame. It's a simple application that requests movies from an API and chooses one at random.  It was an experiment that I used as a way to learn how Re-frame works. "
+           ]]
+         [:li
+          [:p.description
+           [:a {:href "https://github.com/dheiniger/Redeemer-Mobile"} "Redeemer Mobile"] "was the start of a mobile application using Clojurescript and React Native.  It used a Re-frame wrapper called Re-natal."  ]]]
+        ))
+ 
 
 (defroutes routes
   (GET "/" [] (home-page))
@@ -61,5 +68,9 @@
   (route/resources "/")
   (route/not-found "<h1>Page not found</h1>"))
 
-                                        ;(start-server #'routes)
-                                        ;(home-page "test")
+
+(defn -main [& args]
+  (start-server #'routes))
+
+;(start-server #'routes)
+;(home-page "test")

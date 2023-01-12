@@ -7,10 +7,17 @@ body {
 header{
     height:20vh;
 }
-	
+
+a{
+    color:lightblue;
+}
+
+a:hover{
+    color:green;
+}
+
 nav a{
     text-decoration:none;
-    color:#fff;
     margin-right:10px;
 }
 
@@ -40,9 +47,6 @@ nav a.active{
     border-radius:5px;
 }
 
-.button:hover{
-    color:green;
-}
 
 .description{
     font-size:medium;
