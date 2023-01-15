@@ -46,21 +46,21 @@
 
 (defn projects-page []
   (page "Projects"
-        [:p.description  "Here are some of my recent side projects.  They are not polished feature-rich projects, most of them are not even finished.  I like to start small projects as a way to get familiar with a tool or language."]
+        [:p  "Here are some of my recent side projects.  They are not polished feature-rich projects, most of them are not even finished.  I like to start small projects as a way to get familiar with a tool or language."]
         [:ol
          [:li
-          [:p.description
+          [:p
            "This " [:a {:href "https://github.com/dheiniger/homepage"} "Website"] ".  The website you're viewing is a very basic, static site that was built using Clojure with very few dependencies.  For informational sites, I prefer to not rely on javascript, so it is written using Clojure and Hiccup."]]
          [:li
-          [:p.description
+          [:p
            [:a {:href "https://github.com/dheiniger/movie-night"} "Movie Night"] " is a proof of concept built with Clojurescript, " [:a {:href "https://reagent-project.github.io/"} "Reagent"]", and " [:a {:href "https://github.com/day8/re-frame"} "re-frame"]". It's a simple application that requests movies from an API and chooses one at random.  It was an experiment that I used as a way to learn how Re-frame works. "]]
          [:li
-          [:p.description
+          [:p
            [:a {:href "https://github.com/dheiniger/Redeemer-Mobile"} "Redeemer Mobile"] " was the start of a mobile application using Clojurescript and React Native.  It uses a wrapper library called "[:a {:href "https://github.com/drapanjanas/re-natal"}"re-natal"]" that wraps Reagent and Re-frame."]]]))
 
 (defn contact-page[]
   (page "Contact"
-        [:p.description.centered "You can reach my by email at daniel.r.heiniger@proton.me"]))
+        [:p.centered "You can reach me at daniel.r.heiniger@proton.me"]))
 
 (defroutes routes
   (GET "/" [] (home-page))
@@ -73,5 +73,8 @@
 (defn -main [& args]
   (start-server #'routes))
 
-                                        ;(start-server #'routes)
+
+;  (start-server #'routes)
+
+                                        
                                         ;(home-page "test")

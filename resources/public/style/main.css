@@ -1,11 +1,11 @@
 body {
-    background-color:#333;
-    font-family:Andale Mono, monospace;
+    background-color:#021935;
+    font-family:sans-serif;;
     color:#fff;
 }
 
 header{
-    height:20vh;
+    height:15vh;
 }
 
 a{
@@ -13,7 +13,11 @@ a{
 }
 
 a:hover{
-    color:green;
+    color:#14ef14
+}
+
+nav {
+    font-size:larger;
 }
 
 nav a{
@@ -52,7 +56,7 @@ nav a.active{
 }
 
 .description{
-    font-size:medium;
+    font-size:larger;
 }
 
 .preview{
@@ -69,7 +73,7 @@ nav a.active{
 }
 
 .content{
-    width:50%;
+    width:70%;
     margin:auto;
     font-size:x-large;
     min-height:65vh;
@@ -82,3 +86,4 @@ nav a.active{
 .left{
     float:left;
 }      
+			      
