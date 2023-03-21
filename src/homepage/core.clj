@@ -42,11 +42,12 @@
 
 (defn home-page []
   (page "Home"
-        [:p "I'm a Software Engineer based in Des Moines, Iowa.  I have experience designing and implementing web applications and prefer programming in Clojure/Clojurescript."]))
+        ;;[:p "I'm a Software Engineer based in Des Moines, Iowa.  I have experience designing and implementing web applications and prefer programming in Clojure/Clojurescript."]
+        ))
 
 (defn projects-page []
   (page "Projects"
-        [:p  "Here are some of my recent side projects.  They are not polished feature-rich projects, most of them are not even finished.  I like to start small projects as a way to get familiar with a tool or language."]
+        (comment[:p  "Here are some of my recent side projects.  They are not polished feature-rich projects, most of them are not even finished.  I like to start small projects as a way to get familiar with a tool or language."]
         [:ol
          [:li
           [:p
@@ -56,7 +57,7 @@
            [:a {:href "https://github.com/dheiniger/movie-night"} "Movie Night"] " is a proof of concept built with Clojurescript, " [:a {:href "https://reagent-project.github.io/"} "Reagent"]", and " [:a {:href "https://github.com/day8/re-frame"} "re-frame"]". It's a simple application that requests movies from an API and chooses one at random.  It was an experiment that I used as a way to learn how Re-frame works. "]]
          [:li
           [:p
-           [:a {:href "https://github.com/dheiniger/Redeemer-Mobile"} "Redeemer Mobile"] " was the start of a mobile application using Clojurescript and React Native.  It uses a wrapper library called "[:a {:href "https://github.com/drapanjanas/re-natal"}"re-natal"]" that wraps Reagent and Re-frame."]]]))
+           [:a {:href "https://github.com/dheiniger/Redeemer-Mobile"} "Redeemer Mobile"] " was the start of a mobile application using Clojurescript and React Native.  It uses a wrapper library called "[:a {:href "https://github.com/drapanjanas/re-natal"}"re-natal"]" that wraps Reagent and Re-frame."]]])))
 
 (defn contact-page[]
   (page "Contact"
@@ -74,7 +75,7 @@
   (start-server #'routes))
 
 
-;  (start-server #'routes)
+;;(start-server #'routes)
 
                                         
-                                        ;(home-page "test")
+;;(home-page "test")
