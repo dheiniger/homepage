@@ -1,7 +1,5 @@
 (ns homepage.core
   (:require [homepage.server :as server :refer [start-server]]
-            [compojure.route :as route :refer [resources not-found]]
-            [compojure.core :refer [defroutes GET]]
             [hiccup.core :refer :all]
             [hiccup.page :as p :refer [html5 include-css]]))
 
@@ -33,7 +31,8 @@
 (defn page [page-name & content]
   (p/html5 [:head
             [:title "Daniel Heiniger"]
-            [:link {:rel "icon" :type "image/x-icon" :href "/images/favicon.svg"}]]
+            [:link {:rel "icon" :type "image/x-icon" :href "/images/favicon.svg"}]
+            [:meta {:name "viewport" :content "width=device-width, initial-scale=10"}]]
            (include-css "/style/main.css")
            [:body
             (header page-name)
@@ -63,15 +62,10 @@
   (page "Contact"
         [:p.centered "You can reach me at daniel.r.heiniger@proton.me"]))
 
-(defroutes routes
-  (GET "/" [] (home-page))
-  (GET "/projects" [] (projects-page))
-  (GET "/contact" [] (contact-page))
-  (route/resources "/")
-  (route/not-found "<h1>Page not found</h1>"))
 
 
-(defn -main [& args]
+
+#_(defn -main [& args]
   (start-server #'routes))
 
 
