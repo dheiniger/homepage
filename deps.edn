@@ -1,0 +1,13 @@
+{:paths ["src" "resources"]
+ :deps
+ {org.clojure/clojure {:mvn/version "1.10.0"}
+  http-kit/http-kit   {:mvn/version "2.7.0-alpha1"}
+  compojure/compojure {:mvn/version "1.7.0"}
+  hiccup/hiccup       {:mvn/version "1.0.5"}}
+
+ :aliases
+ {:build {:deps       {io.github.clojure/tools.build {:mvn/version "0.9.6"}
+                       slipset/deps-deploy           {:mvn/version "0.2.0"}
+                       org.clj-commons/pretty        {:mvn/version "2.5.1"}
+                       clj-kondo/clj-kondo           {:mvn/version "2024.03.13"}}
+          :ns-default build}}}
