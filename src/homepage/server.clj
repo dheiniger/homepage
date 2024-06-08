@@ -3,11 +3,6 @@
 
 (defonce server (atom nil))
 
-(defn app [request]
-  {:status 200
-   :headers {"Content-type" "text/html"}
-   :body "<h1>body </h1>"})
-
 (defn start-server [routes]
   (reset! server  (s/run-server routes {:port 8080})))
 
@@ -15,10 +10,3 @@
   (when-not (nil? @server)
     (@server :timeout 100)
     (reset! server nil)))
-
-
-;(start-server)
-
-;(stop-server server)
-
-
