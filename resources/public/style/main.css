@@ -1,6 +1,6 @@
 body {
-    background-color:#021935;
-    font-family:sans-serif;;
+    background-color: #0a0c26;
+    font-family:sans-serif;
     color:#fff;
 }
 
@@ -9,11 +9,11 @@ header{
 }
 
 a{
-    color:lightblue;
+    color:#AAABB8;
 }
 
 a:hover{
-    color:#14ef14
+    color:#2E9CCA;
 }
 
 nav {
@@ -75,7 +75,7 @@ nav a.active{
 .content{
     width:70%;
     margin:auto;
-    font-size:x-large;
+    font-size:large;
     min-height:65vh;
 }
 	 

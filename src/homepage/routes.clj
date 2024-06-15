@@ -5,7 +5,7 @@
     [homepage.core :as h]))
 
 (defroutes routes
-           (GET "/" [] (h/home-page))
+           (GET "/" [] (h/blog-page))
            (GET "/projects" [] (h/projects-page))
            (GET "/contact" [] (h/contact-page))
            (route/resources "/")

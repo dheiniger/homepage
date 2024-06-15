@@ -8,7 +8,7 @@
 
 (defn navigation [active-page]
   [:nav.right
-   (nav-item active-page "Home" "/")
+   (nav-item active-page "Blog" "/")
    (nav-item active-page "Projects" "/projects")
    (nav-item active-page "Contact" "/contact")
    [:a.button {:href "/files/resume.pdf" :target "blank"} "Resume"]])
@@ -30,7 +30,7 @@
 (defn page [page-name & content]
   (p/html5 [:head
             [:title "Daniel Heiniger"]
-            [:link {:rel "icon" :type "image/x-icon" :href "/images/favicon.svg"}]
+            [:link {:rel "icon" :type "image/x-icon" :href "/images/favicon.png"}]
             [:meta {:name "viewport" :content "width=device-width, initial-scale=0.8"}]]
            (include-css "/style/main.css")
            [:body
@@ -38,9 +38,18 @@
             [:section.content content]
             (footer)]))
 
-(defn home-page []
-  (page "Home"
-        ;;[:p "I'm a Software Engineer based in Des Moines, Iowa.  I have experience designing and implementing web applications and prefer programming in Clojure/Clojurescript."]
+(defn blog-page []
+  (page "Blog"
+
+        (comment
+          [:h3 "Clojure Books"]
+          [:p "I've found that reading books is one of the best ways for me to learn.  With my renewed interest in Clojure, here are some books I've read on the subject, in no particular order:"]
+          [:ul
+           [:ul "Getting Clojure"]
+           [:ul "Clojure for the Brave and True"]
+           [:ul "Clojure Applied: From Practice to Practitioner"]
+           [:ul "Programming Clojure"]]
+          [:em {:style {"font-size" "x-small"}} "Published: 06/11/2024"])
         ))
 
 (defn projects-page []
