@@ -30,8 +30,17 @@
      [:a {:href "https://www.linkedin.com/in/daniel-heiniger-01507113b"} [:img {:src "/images/linked-in.png" :height "25" :alt "Linked-in"}] "LinkedIn"]]]
    [:div.bottom-disclaimer [:a {:href "https://github.com/dheiniger/homepage"} "Created by Daniel Heiniger"]]])
 
+(defn- include-analytics []
+  [:script {:async "true" :src "https://www.googletagmanager.com/gtag/js?id=G-D6W80Z08L2"}]
+  [:script "window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D6W80Z08L2');"])
+
 (defn page [page-name & content]
   (p/html5 [:head
+            (include-analytics)
             [:title "Daniel Heiniger"]
             [:link {:rel "icon" :type "image/x-icon" :href "/images/favicon.png"}]
             [:meta {:name "viewport" :content "width=device-width, initial-scale=0.8"}]]
@@ -46,14 +55,14 @@
         [:h3 "Recent posts"]
         (let [all-posts (blog/get-all-posts)]
           [:ul
-          (map (fn[[title date]]
-                   [:span [:a {:href (str "/blog/" title " ")}  title] [:em " " date]]) all-posts)])))
+           (map (fn [[title date]]
+                  [:span [:a {:href (str "/blog/" title " ")} title] [:em " " date]]) all-posts)])))
 
 (defn blog [title]
   (let [[title date contents] (blog/get-post title)]
-  (page title
-        [:h1 (str title " - ") [:em date]]
-        (md/markdown->hiccup contents))))
+    (page title
+          [:h1 (str title " - ") [:em date]]
+          (md/markdown->hiccup contents))))
 
 (defn projects-page []
   (page "Projects"
