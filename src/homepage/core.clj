@@ -1,9 +1,8 @@
 (ns homepage.core
   (:require [commonmark-hiccup.core :as md]
             [hiccup.core :refer :all]
-            [hiccup.page :as p :refer [include-css]]
-            [homepage.blog :as blog]
-            ))
+            [hiccup.page :as p :refer [include-css include-js]]
+            [homepage.blog :as blog]))
 
 (defn nav-item [active-page page-name path]
   (let [class (when (= active-page page-name) "active")]
@@ -19,7 +18,7 @@
 (defn header [page-name]
   [:header
    (navigation page-name)
-   [:h1 "Daniel Heiniger"]
+   [:a {:href ""}[:h1 "Daniel Heiniger"]]
    [:h3.subheading "Software Engineer"]])
 
 (defn footer []
@@ -41,6 +40,9 @@
             [:link {:rel "icon" :type "image/x-icon" :href "/images/favicon.png"}]
             [:meta {:name "viewport" :content "width=device-width, initial-scale=0.8"}]]
            (include-css "/style/main.css")
+           (include-css "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css")
+           (include-js "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js")
+           [:script "hljs.highlightAll()"]
            [:body
             (header page-name)
             [:section.content content]
