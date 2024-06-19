@@ -1,6 +1,9 @@
 (ns homepage.core
-  (:require [hiccup.core :refer :all]
-            [hiccup.page :as p :refer [include-css]]))
+  (:require [commonmark-hiccup.core :as md]
+            [hiccup.core :refer :all]
+            [hiccup.page :as p :refer [include-css]]
+            [homepage.blog :as blog]
+            ))
 
 (defn nav-item [active-page page-name path]
   (let [class (when (= active-page page-name) "active")]
@@ -40,17 +43,17 @@
 
 (defn blog-page []
   (page "Blog"
-
-        (comment
-          [:h3 "Clojure Books"]
-          [:p "I've found that reading books is one of the best ways for me to learn.  With my renewed interest in Clojure, here are some books I've read on the subject, in no particular order:"]
+        [:h3 "Recent posts"]
+        (let [all-posts (blog/get-all-posts)]
           [:ul
-           [:ul "Getting Clojure"]
-           [:ul "Clojure for the Brave and True"]
-           [:ul "Clojure Applied: From Practice to Practitioner"]
-           [:ul "Programming Clojure"]]
-          [:em {:style {"font-size" "x-small"}} "Published: 06/11/2024"])
-        ))
+          (map (fn[[title date]]
+                   [:span [:a {:href (str "/blog/" title " ")}  title] [:em " " date]]) all-posts)])))
+
+(defn blog [title]
+  (let [[title date contents] (blog/get-post title)]
+  (page title
+        [:h1 (str title " - ") [:em date]]
+        (md/markdown->hiccup contents))))
 
 (defn projects-page []
   (page "Projects"
