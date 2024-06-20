@@ -18,7 +18,7 @@
 (defn header [page-name]
   [:header
    (navigation page-name)
-   [:a {:href ""}[:h1 "Daniel Heiniger"]]
+   [:a {:href "/"}[:h1 "Daniel Heiniger"]]
    [:h3.subheading "Software Engineer"]])
 
 (defn footer []
