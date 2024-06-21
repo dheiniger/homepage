@@ -36,7 +36,7 @@
                       function gtag(){dataLayer.push(arguments);}
                       gtag('js', new Date());
                       gtag('config', 'G-D6W80Z08L2');"]
-            [:title "Daniel Heiniger"]
+            [:title (str "Daniel Heiniger - " page-name)]
             [:link {:rel "icon" :type "image/x-icon" :href "/images/favicon.png"}]
             [:meta {:name "viewport" :content "width=device-width, initial-scale=0.8"}]]
            (include-css "/style/main.css")
