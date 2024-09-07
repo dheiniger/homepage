@@ -54,7 +54,7 @@
         (let [all-posts (blog/get-all-posts)]
           [:ul
            (map (fn [[title date]]
-                  [:span [:a {:href (str "/blog/" title " ")} title] [:em " " date]]) all-posts)])))
+                  [:li[:span [:a {:href (str "/blog/" title " ")} title] [:em " " date]]]) all-posts)])))
 
 (defn blog [title]
   (let [[title date contents] (blog/get-post title)]
