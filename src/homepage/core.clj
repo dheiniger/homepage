@@ -13,7 +13,7 @@
    (nav-item active-page "Blog" "/")
    (nav-item active-page "Projects" "/projects")
    (nav-item active-page "Contact" "/contact")
-   [:a.button {:href "/files/resume.pdf" :target "blank"} "Resume"]])
+   #_[:a.button {:href "/files/resume.pdf" :target "blank"} "Resume"]])
 
 (defn header [page-name]
   [:header
