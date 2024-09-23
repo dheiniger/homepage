@@ -1,7 +1,11 @@
 body {
-    background-color: #202020;
-    font-family:sans-serif;
-    color:#fff;
+  background-color: #202020;
+  color:#fff;
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
+    /*color:#5656e7;*/
+
 }
 
 header{
@@ -9,7 +13,7 @@ header{
 }
 
 a{
-    color:#AAABB8;
+    color:#aaabb8;
     text-decoration:none;
 }
 
