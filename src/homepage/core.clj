@@ -18,7 +18,7 @@
 (defn header [page-name]
   [:header
    (navigation page-name)
-   [:a {:href "/"}[:h1 "Daniel Heiniger"]]
+   [:a {:href "/"} [:h1 "Daniel Heiniger"]]
    [:h3.subheading "Software Engineer"]])
 
 (defn footer []
@@ -39,6 +39,9 @@
             [:title (str "Daniel Heiniger - " page-name)]
             [:link {:rel "icon" :type "image/x-icon" :href "/images/favicon.png"}]
             [:meta {:name "viewport" :content "width=device-width, initial-scale=0.8"}]]
+           [:link {:rel "preconnect" :href "https://fonts.googleapis.com"}]
+           [:link {:rel "preconnect" :href "https://fonts.gstatic.com" :crossorigin "true"}]
+           [:link {:href "https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Handjet:wght@100..900&family=New+Amsterdam&family=Silkscreen:wght@400;700&display=swap" :rel "stylesheet"}]
            (include-css "/style/main.css")
            (include-css "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css")
            (include-js "//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js")
@@ -54,7 +57,7 @@
         (let [all-posts (blog/get-all-posts)]
           [:ul
            (map (fn [[title date]]
-                  [:li[:span [:a {:href (str "/blog/" title " ")} title] [:em " " date]]]) all-posts)])))
+                  [:li [:span [:a {:href (str "/blog/" title " ")} title] [:em " " date]]]) all-posts)])))
 
 (defn blog [title]
   (let [[title date contents] (blog/get-post title)]
@@ -74,7 +77,12 @@
                     [:a {:href "https://github.com/dheiniger/movie-night"} "Movie Night"] " is a proof of concept built with Clojurescript, " [:a {:href "https://reagent-project.github.io/"} "Reagent"] ", and " [:a {:href "https://github.com/day8/re-frame"} "re-frame"] ". It's a simple application that requests movies from an API and chooses one at random.  It was an experiment that I used as a way to learn how Re-frame works. "]]
                   [:li
                    [:p
-                    [:a {:href "https://github.com/dheiniger/Redeemer-Mobile"} "Redeemer Mobile"] " was the start of a mobile application using Clojurescript and React Native.  It uses a wrapper library called " [:a {:href "https://github.com/drapanjanas/re-natal"} "re-natal"] " that wraps Reagent and Re-frame."]]])))
+                    [:a {:href "https://github.com/dheiniger/Redeemer-Mobile"} "Redeemer Mobile"] " was the start of a mobile application using Clojurescript and React Native.  It uses a wrapper library called " [:a {:href "https://github.com/drapanjanas/re-natal"} "re-natal"] " that wraps Reagent and Re-frame."]]]
+                 )
+        [:h1 "Recent Projects"]
+        [:h3 [:a {:href "https://github.com/dheiniger/scour"} "Scour"]]
+        [:p " - A very small library that can be useful to crawl a particular website.  Supports custom timeouts, throttling by a specific number of milliseconds or a random range of milliseconds, and optional filters to include additional content."]))
+
 
 (defn contact-page []
   (page "Contact"
