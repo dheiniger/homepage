@@ -65,6 +65,16 @@
           [:h1 (str title " - ") [:em date]]
           (md/markdown->hiccup contents))))
 
+(defn wordle-page []
+  (p/html5
+      [:head
+       [:title "Daniel Heiniger - Wordle Clone"]
+       (include-css "/style/wordle.css")]
+    [:body
+     [:div#app
+         [:p "Loading..."]]
+        (include-js "wordle/out/main.js")]))
+
 (defn projects-page []
   (page "Projects"
         (comment [:p "Here are some of my recent side projects.  They are not polished feature-rich projects, most of them are not even finished.  I like to start small projects as a way to get familiar with a tool or language."]
