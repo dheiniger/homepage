@@ -10,5 +10,6 @@
            (GET "/contact" [] (h/contact-page))
            (GET "/blog/:title" request (h/blog (str (:title (:params request)))))
            (GET "/wordle" [] (h/wordle-page))
+           (GET "/wordle/words" [] (h/wordle-words))
            (route/resources "/")
            (route/not-found "<h1>Page not found</h1>"))

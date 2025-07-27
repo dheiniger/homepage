@@ -75,6 +75,9 @@
          [:p "Loading..."]]
         (include-js "wordle/out/main.js")]))
 
+(defn wordle-words []
+  (slurp "resources/public/wordle/words.edn"))
+
 (defn projects-page []
   (page "Projects"
         (comment [:p "Here are some of my recent side projects.  They are not polished feature-rich projects, most of them are not even finished.  I like to start small projects as a way to get familiar with a tool or language."]

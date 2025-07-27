@@ -144,7 +144,7 @@
         [:div[:button.button {:on {:click [:new-game store]}} "Play Again!"]]])]))
 
 (defn- word-list []
-  (go (let [response (<p! (js/fetch "wordle/words.edn"))
+  (go (let [response (<p! (js/fetch "/wordle/words" #_"public/wordle/words.edn"))
             words (<p! (.text response))]
         (edn/read-string words))))
 
