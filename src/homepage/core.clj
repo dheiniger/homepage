@@ -73,7 +73,7 @@
     [:body
      [:div#app
          [:p "Loading..."]]
-        (include-js "wordle/out/main.js")]))
+        (include-js "/wordle/out/main.js")]))
 
 (defn wordle-words []
   (slurp "resources/public/wordle/words.edn"))
