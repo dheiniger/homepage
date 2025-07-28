@@ -2,10 +2,9 @@
 FROM clojure:openjdk-19 AS build
 
 WORKDIR /app
-RUN clj -T:build uber
 COPY . /app
 
-
+RUN clj -T:build uber
 
 EXPOSE $PORT
 
@@ -13,7 +12,6 @@ RUN ls
 RUN ls resources
 RUN ls resources/public
 RUN ls resources/public/wordle
-RUN ls resources/public/wordle/out
 RUN ls target
 RUN ls target/public
 RUN ls target/public/wordle
