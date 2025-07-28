@@ -11,7 +11,7 @@ EXPOSE $PORT
 RUN ls
 RUN ls resources
 RUN ls resources/public
-RUN ls reousrces/public/wordle
+RUN ls resources/public/wordle
 RUN ls resources/public/wordle/out
 RUN ls target
 RUN ls target/public
