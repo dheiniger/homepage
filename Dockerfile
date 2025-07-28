@@ -2,9 +2,10 @@
 FROM clojure:openjdk-19 AS build
 
 WORKDIR /app
+RUN clj -T:build uber
 COPY . /app
 
-RUN clj -T:build uber
+
 
 EXPOSE $PORT
 
