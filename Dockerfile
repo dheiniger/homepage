@@ -9,6 +9,8 @@ RUN clj -T:build uber
 EXPOSE $PORT
 
 RUN ls
+RUN ls resources
+RUN ls resources/public
 RUN ls target
 
 ENTRYPOINT exec java $JAVA_OPTS -jar target/homepage-standalone.jar
