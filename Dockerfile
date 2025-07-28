@@ -1,10 +1,9 @@
 # syntax = docker/dockerfile:1.2
 FROM clojure:openjdk-19 AS build
 
+RUN clj -T:build uber
 WORKDIR /app
 COPY . /app
-
-RUN clj -T:build uber
 
 EXPOSE $PORT
 
@@ -13,8 +12,5 @@ RUN ls resources
 RUN ls resources/public
 RUN ls resources/public/wordle
 RUN ls target
-RUN ls target/public
-RUN ls target/public/wordle
-RUN ls target/public/wordle/out
 
 ENTRYPOINT exec java $JAVA_OPTS -jar target/homepage-standalone.jar
