@@ -8,13 +8,18 @@
 (def target-dir "target")
 (def uber-file (format "%s/%s-standalone.jar" target-dir (name lib)))
 
+(defn- build-cljs[]
+  (println "Building cljs..")
+  (let [out (sh "clojure" "-M" "-m" "cljs.main" "--optimizations" "advanced" "--output-dir" "resources/public/wordle/out" "-c" "homepage.wordle")]
+    (println "output is "out)))
 (defn uber [_]
   (prn "building uber")
   (let [basis (b/create-basis {:project "deps.edn"})]
     (b/delete {:path "target"})
-    (sh "clj" "-M" "-m" "cljs.main" "--optimizations" "advanced" "--output-dir" "resources/public/wordle/out" "-c" "homepage.wordle")
+    (build-cljs)
     (b/copy-dir {:src-dirs   ["src" "resources"]
                  :target-dir class-dir})
+
     (b/compile-clj {:basis      basis
                     :ns-compile '[homepage.main]
                     :class-dir  class-dir})
