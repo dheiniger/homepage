@@ -68,12 +68,13 @@
 (defn wordle-page []
   (p/html5
       [:head
+       [:meta {:name "viewport" :content "width=device-width, initial-scale=0.55"}]
        [:title "Daniel Heiniger - Wordle Clone"]
        (include-css "/style/wordle.css")]
     [:body
      [:div#app
          [:p "Loading..."]]
-        (include-js "/wordle/out/main.js")]))
+        (include-js "wordle/out/main.js")]))
 
 (defn wordle-words []
   (slurp "resources/public/wordle/words.edn"))
