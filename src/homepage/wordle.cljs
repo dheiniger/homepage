@@ -123,7 +123,8 @@
     (for [row ks]
       [:div.btn-row
        (map (fn[k] (let [stat (get letter-statuses (string/upper-case k) :default)]
-                     [:button.letter {:on {:click [:key-clicked k]} :id (str "letter-" k) :class stat} k])) row)])))
+                     [:button.letter {:on {:click [:key-clicked k]
+                                           :touchstart [:key-clicked k]} :id (str "letter-" k) :class stat} k])) row)])))
 
 (defn draw [store]
   (let [{:keys[board status word guesses]} @store
