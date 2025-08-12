@@ -68,7 +68,7 @@
 (defn wordle-page []
   (p/html5
       [:head
-       [:meta {:name "viewport" :content "width=device-width, initial-scale=.99"}]
+       [:meta {:name "viewport" :content "width=device-width, initial-scale=.76"}]
        [:title "Daniel Heiniger - Wordle Clone"]
        (include-css "/style/wordle.css")]
     [:body
