@@ -162,6 +162,7 @@
         (.addEventListener js/window "keydown" (partial handle-keydown store))
         (r/set-dispatch!
          (fn [event-data [action state]]
+           (.preventDefault (:replicant/dom-event event-data))
            (case action
              :key-clicked (handle-keydown store (clj->js {:key state}))
              :new-game (reset! state (init-state w h words))
